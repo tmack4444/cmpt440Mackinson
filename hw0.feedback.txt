@@ -1,0 +1,25 @@
+65 points
+
+Tom,
+
+- Good job in creating your accounts!
+
+- Good job in setting up your java compiler in your system.
+
+- Good job with your first GitHub submission!
+
+However,
+
+- The repository is not organized as indicated in the handout, i.e., you were
+  asked to organize your work and put your homework assignment in a folder
+  named hw/0/ but you did not follow instructions.
+
+- You were asked to name your .pdf file hw0lastname.pdf where "lastname" is
+  your last name, but you did not follow instructions.
+
+- Please be careful in following instructions in the future.
+
+
+Peace,
+
+- Dr. Pablo Rivas
