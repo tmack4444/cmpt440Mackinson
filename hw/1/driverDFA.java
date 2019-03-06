@@ -13,6 +13,27 @@ class dfa{
          /*q9*/ {q10, q8, q10, q10},
          /*q10*/ {q10, q10, q10, q10}
        };
+
+       public static currState = q0;
+       public static String currInstruction = "";
             
+      public void process (String in){
+        for (int i = 0; i < in.length(); i++) {
+          try{
+            state = delta[state] [-'0'];
+          } catch (ArrayIndexOutOfBoundsException ex) {
+            state = q10;
+          }
+        }
+      }
+
+      public void isTerminating(){
+        if(currState == q9){
+          return "That is a solution.";
+        } else {
+          return "That is not a solution.";
+        }
+
+      }
     }
 }
