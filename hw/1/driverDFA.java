@@ -1,5 +1,9 @@
+import java.util.Scanner;
+
 public class driverDFA{
     public static void main(String[] args) {
-       ManWolf.process(args.toString());
+       Scanner scanner = new Scanner(System.in);
+       String inputText = scanner.nextLine();
+       ManWolf.process(inputText);
      }
 }

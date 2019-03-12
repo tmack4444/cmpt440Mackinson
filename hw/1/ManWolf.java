@@ -29,12 +29,10 @@ public class ManWolf{
           break;
         case 'n': nextInd = 3; // Based on my state transition table, n is index 3
           break;
-
-        default: state = 10; // If there is an invalid character, go to an error state and end
-          isTerminating();
+        default: state = 10;
+          i = in.length();
           break;
       }
-
       state = delta[state] [nextInd];
     }
     isTerminating();
