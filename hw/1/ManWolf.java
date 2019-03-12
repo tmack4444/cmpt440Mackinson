@@ -1,19 +1,19 @@
 public class ManWolf{
-  public String[] [] delta = {
-    /*q0*/ {"q10", "q1", "q10", "q10"},
-    /*q1*/ {"q10", "q0", "q10", "q2"},
-    /*q2*/ {"q4", "q10", "q3", "q1"},
-    /*q3*/ {"q10", "q5", "q2", "q10"},
-    /*q4*/ {"q2", "q6", "q10", "q10"},
-    /*q5*/ {"q7", "q3", "q10", "q10"},
-    /*q6*/ {"q10", "q4", "q7", "q10"},
-    /*q7*/ {"q5", "q10", "q6", "q8"},
-    /*q8*/ {"q10", "q9", "q10", "q7"},
-    /*q9*/ {"q10", "q8", "q10", "q10"},
-    /*q10*/ {"q10", "q10", "q10", "q10"}
+  public static int[][] delta = {
+    /*q0*/ {10, 1, 10, 10},
+    /*q1*/ {10, 0, 10, 2},
+    /*q2*/ {4, 10, 3, 1},
+    /*q3*/ {10, 5, 2, 10},
+    /*q4*/ {2, 6, 10, 10},
+    /*q5*/ {7, 3, 10, 10},
+    /*q6*/ {10, 4, 7, 10},
+    /*q7*/ {5, 10, 6, 8},
+    /*q8*/ {10, 9, 10, 7},
+    /*q9*/ {10, 8, 10, 10},
+    /*q10*/ {10, 10, 10, 10}
   };
 
-  public static String state = "q0";
+  public static int state = 0;
   public static String currInstruction = "";
   public static int nextInd = 0;
 
@@ -30,17 +30,17 @@ public class ManWolf{
         case 'n': nextInd = 3; // Based on my state transition table, n is index 3
           break;
 
-        default: currState = "q10"; // If there is an invalid character, go to an error state and end
+        default: state = 10; // If there is an invalid character, go to an error state and end
           isTerminating();
           break;
       }
 
-      state = delta[state, nextInd];
-       }
-     }
+      state = delta[state] [nextInd];
+    }
+  }
 
-    public void isTerminating(){
-      if(currState == "q9"){
+    public static void isTerminating(){
+      if(state == 9){
         System.out.println("That is a solution.");
       } else {
         System.out.println("That is not a solution.");
