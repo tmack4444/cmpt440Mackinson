@@ -37,6 +37,7 @@ public class ManWolf{
 
       state = delta[state] [nextInd];
     }
+    isTerminating();
   }
 
     public static void isTerminating(){
