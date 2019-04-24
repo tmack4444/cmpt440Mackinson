@@ -14,11 +14,11 @@ public class TrafficLight{
     for (int i = 0; i < in.length(); i++) {
       char c = in.charAt(i);
       switch(c){
-        case 'g': nextInd = 0; // Based on my state transition table, C is index 0
+        case 'g': nextInd = 0; // Based on my state transition table, g is index 0
           break;
-        case 'y': nextInd = 1; // Based on my state transition table, g is index 1
+        case 'y': nextInd = 1; // Based on my state transition table, y is index 1
           break;
-        case 'r': nextInd = 2; // Based on my state transition table, w is index 2
+        case 'r': nextInd = 2; // Based on my state transition table, r is index 2
           break;
         default: state = 3;
           i = in.length();
