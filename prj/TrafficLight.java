@@ -1,9 +1,13 @@
 public class TrafficLight{
   public static int[][] delta = {
-    /*q0*/ {3, 1, 3},
-    /*q1*/ {0, 3, 2},
-    /*q2*/ {3, 1, 3},
-    /*q3*/ {3, 3, 3}
+    /*q0*/ {3, 1, 3, 4, 3},
+    /*q1*/ {0, 3, 2, 6, 3},
+    /*q2*/ {3, 1, 3, 5, 3},
+    /*q3*/ {3, 3, 3, 3, 3},
+    /*q4*/ {3, 3, 3, 3, 0},
+    /*q5*/ {3, 3, 3, 3, 2},
+    /*q6*/ {3, 3, 3, 7, 1},
+    /*q7*/ {3, 3, 3, 6, 1}
   };
 
   public static int state = 0;
@@ -19,6 +23,10 @@ public class TrafficLight{
         case 'y': nextInd = 1; // Based on my state transition table, y is index 1
           break;
         case 'r': nextInd = 2; // Based on my state transition table, r is index 2
+          break;
+        case 'f': nextInd = 3; // Based on my state transition table, r is index 2
+          break;
+        case 's': nextInd = 4; // Based on my state transition table, r is index 2
           break;
         default: state = 3;
           i = in.length();
