@@ -1,13 +1,16 @@
 public class TrafficLight{
   public static int[][] delta = {
-    /*q0*/ {3, 1, 3, 4, 3},
-    /*q1*/ {0, 3, 2, 6, 3},
-    /*q2*/ {3, 1, 3, 5, 3},
-    /*q3*/ {3, 3, 3, 3, 3},
-    /*q4*/ {3, 3, 3, 3, 0},
-    /*q5*/ {3, 3, 3, 3, 2},
-    /*q6*/ {3, 3, 3, 7, 1},
-    /*q7*/ {3, 3, 3, 6, 1}
+    /*q0*/ {10, 1, 10, 6, 10},
+    /*q1*/ {10, 10, 2, 7, 10},
+    /*q2*/ {3, 10, 10, 10, 10},
+    /*q3*/ {10, 4, 10, 8, 10},
+    /*q4*/ {10, 10, 5, 9, 10},
+    /*q5*/ {0, 10, 10, 10, 10},
+    /*q6*/ {10, 10, 10, 10, 0},
+    /*q7*/ {10, 10, 10, 10, 1},
+    /*q8*/ {10, 10, 10, 10, 3},
+    /*q9*/ {10, 10, 10, 10, 4},
+    /*q10*/{10, 10, 10, 10, 10},
   };
 
   public static int state = 0;
@@ -28,7 +31,7 @@ public class TrafficLight{
           break;
         case 's': nextInd = 4; // Based on my state transition table, r is index 2
           break;
-        default: state = 3;
+        default: state = 10;
           i = in.length();
           break;
       }
@@ -38,7 +41,7 @@ public class TrafficLight{
   }
 
     public static void isTerminating(){
-      if(state == 0 || state == 2){
+      if(state == 0 || state == 3 || state == 6 || state == 7 || state == 8 || state == 9){
         System.out.println("That is a solution.");
       } else {
         System.out.println("That is not a solution.");
