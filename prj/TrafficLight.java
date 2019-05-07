@@ -19,17 +19,17 @@ public class TrafficLight{
 
   public static void process(String in) {
     for (int i = 0; i < in.length(); i++) {
-      char c = in.charAt(i);
+      char c = Character.toUpperCase(in.charAt(i));
       switch(c){
-        case 'g': nextInd = 0; // Based on my state transition table, g is index 0
+        case 'G': nextInd = 0; // Based on my state transition table, g is index 0
           break;
-        case 'y': nextInd = 1; // Based on my state transition table, y is index 1
+        case 'Y': nextInd = 1; // Based on my state transition table, y is index 1
           break;
-        case 'r': nextInd = 2; // Based on my state transition table, r is index 2
+        case 'R': nextInd = 2; // Based on my state transition table, r is index 2
           break;
-        case 'f': nextInd = 3; // Based on my state transition table, r is index 2
+        case 'F': nextInd = 3; // Based on my state transition table, r is index 2
           break;
-        case 's': nextInd = 4; // Based on my state transition table, r is index 2
+        case 'S': nextInd = 4; // Based on my state transition table, r is index 2
           break;
         default: state = 10;
           i = in.length();
@@ -41,6 +41,7 @@ public class TrafficLight{
   }
 
     public static void isTerminating(){
+      System.out.println(state);
       if(state == 0 || state == 3 || state == 6 || state == 7 || state == 8 || state == 9){
         System.out.println("That is a solution.");
       } else {
